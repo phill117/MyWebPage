@@ -101,7 +101,7 @@ var ReactDOM = require('react-dom');
 ReactDOM.render(React.createElement(
   'h1',
   null,
-  'Hello, world!'
+  'Hello, MERRRR!'
 ), document.getElementById('example'));
 
 },{"react":158,"react-dom":3}],3:[function(require,module,exports){
