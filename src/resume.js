@@ -5,7 +5,7 @@ var Row = ReactBootstrap.Row;
 var Col = ReactBootstrap.Col;
 var Panel = ReactBootstrap.Panel;
 
-var ProfileComponent = React.createClass({
+var ResumeComponent = React.createClass({
 
 	render: function(){
 		return (
@@ -21,4 +21,4 @@ var ProfileComponent = React.createClass({
 
 });
 
-module.exports.component = ProfileComponent;
+module.exports.component = ResumeComponent;

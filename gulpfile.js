@@ -15,6 +15,7 @@ var watchLess = require('gulp-watch-less');
 var minifyCSS = require('gulp-minify-css');
 var path = require('path');
 
+var evilIconSprite = require('./node_modules/react-evil-icons/tasks/icons');
 
  /* Build Tasks */
 // add custom browserify options here
@@ -44,6 +45,7 @@ function watch() {
 }
 
 function bundle() {
+  evilIconSprite('./index.html', '.') 
   return b.bundle()
     // log errors if they happen
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
