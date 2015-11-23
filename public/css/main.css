@@ -1,1 +1,1 @@
-navbar{width:90%;margin:0 auto}
+#myNavBar,nav .container{width:600px}#myNavBar,.navbar-nav,.navbar-nav>li{float:none}#myNavBar,.nav>li{display:inline-block}#myNavBar{margin:0 auto;text-align:center;font-size:20px;border-radius:0 0 30px 30px}#content>div:first-child{margin-top:65px}

@@ -11,6 +11,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var assign = require('lodash.assign');
 
 var less = require('gulp-less');
+var watchLess = require('gulp-watch-less');
 var minifyCSS = require('gulp-minify-css');
 var path = require('path');
 
@@ -28,9 +29,19 @@ var b = watchify(browserify(opts));
 // i.e. b.transform(coffeeify);
 b.transform(babelify);
 
-gulp.task('js', bundle); // so you can run `gulp js` to build the file
+gulp.task('watch', ['build'], watch);
+gulp.task('build', ['js', 'less']);
+gulp.task('js', bundle);
+gulp.task('less', writeless);
+
+ // so you can run `gulp js` to build the file
 b.on('update', bundle); // on any dep update, runs the bundler
 b.on('log', gutil.log); // output build logs to terminal
+
+function watch() {
+  gulp.watch('src/**/*.js', ['js']);
+  gulp.watch('less/**/*.less', ['less']);
+}
 
 function bundle() {
   return b.bundle()
@@ -43,15 +54,14 @@ function bundle() {
     .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
        // Add transformation tasks to the pipeline here.
     .pipe(sourcemaps.write('./')) // writes .map file
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest('./public/dist'));
 }
 
- /* LESS Tasks */
-gulp.task('less', function () {
+function writeless() {
   return gulp.src('./less/**/*.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
     .pipe(minifyCSS())
     .pipe(gulp.dest('./public/css'));
-});
+}
