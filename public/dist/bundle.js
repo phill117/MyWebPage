@@ -39080,6 +39080,7 @@ var ReactBootstrap = require('react-bootstrap');
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var IndexRoute = require('react-router').IndexRoute;
+var createMemoryHistory = require('history/lib/createMemoryHistory');
 
 var NavBarComponent = require('./navbar').component;
 var ContentComponent = require('./content').component;
@@ -39102,7 +39103,7 @@ var MainComponent = React.createClass({
 
 ReactDOM.render(React.createElement(
   Router,
-  null,
+  { history: createMemoryHistory() },
   React.createElement(
     Route,
     { path: '/', component: MainComponent },
@@ -39113,7 +39114,7 @@ ReactDOM.render(React.createElement(
   )
 ), document.getElementById('app'));
 
-},{"./content":451,"./music":453,"./navbar":454,"./projects":456,"react":450,"react-bootstrap":97,"react-dom":264,"react-router":289}],453:[function(require,module,exports){
+},{"./content":451,"./music":453,"./navbar":454,"./projects":456,"history/lib/createMemoryHistory":11,"react":450,"react-bootstrap":97,"react-dom":264,"react-router":289}],453:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
