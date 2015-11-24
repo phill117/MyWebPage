@@ -4,6 +4,7 @@ var Navbar = ReactBootstrap.Navbar;
 var NavBrand = ReactBootstrap.NavBrand;
 var Nav = ReactBootstrap.Nav;
 var NavItem = ReactBootstrap.NavItem;
+var LinkContainer = require('react-router-bootstrap').LinkContainer;
 
 var NavBarComponent = React.createClass({
 
@@ -11,9 +12,9 @@ var NavBarComponent = React.createClass({
 		return (
 			<Navbar fixedTop id='myNavBar'>
 			  <Nav id='myInnerNav'>
-			    <NavItem eventKey={1} href="#">My Portfolio</NavItem>
-			    <NavItem eventKey={2} href="#">My Projects</NavItem>
-			    <NavItem eventKey={3} href="#">My Music</NavItem>
+			    <LinkContainer to="/portfolio"><NavItem eventKey={1}>My Portfolio</NavItem></LinkContainer>
+			    <LinkContainer to="/projects"><NavItem eventKey={2}>My Projects</NavItem></LinkContainer>
+			    <LinkContainer to="/music"><NavItem eventKey={3}>My Music</NavItem></LinkContainer>
 			  </Nav>
 			</Navbar>
 		);

@@ -34,6 +34,7 @@ gulp.task('watch', ['build'], watch);
 gulp.task('build', ['js', 'less']);
 gulp.task('js', bundle);
 gulp.task('less', writeless);
+gulp.task('svg', insertsvg);
 
  // so you can run `gulp js` to build the file
 b.on('update', bundle); // on any dep update, runs the bundler
@@ -45,7 +46,6 @@ function watch() {
 }
 
 function bundle() {
-  evilIconSprite('./index.html', '.') 
   return b.bundle()
     // log errors if they happen
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
@@ -57,6 +57,10 @@ function bundle() {
        // Add transformation tasks to the pipeline here.
     .pipe(sourcemaps.write('./')) // writes .map file
     .pipe(gulp.dest('./public/dist'));
+}
+
+function insertsvg() {
+  evilIconSprite('./index.html', '.');
 }
 
 function writeless() {
