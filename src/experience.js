@@ -5,22 +5,22 @@ var resume = require('./resumedata.json');
 
 var ExperiencePart = React.createClass({
 
-	joblisting: function(json){
-		return(
-			<div>
-				<h2>{json.company+', '+json.location}</h2>
-				<h3>{json.position}</h3>
-				{json.duties.forEach(function(duty){
-					<p>'&bull; '+{duty}</p>
-				})}
-			</div>
-		);
-	}, 
-	
 	render: function(){
 		return (
 			<Panel bsStyle='primary' header={<h3>Experience</h3>}>
-		    	
+		    	{
+		    		resume.experience.map(function(job, i){
+	    				return(
+		    				<div key={i}>
+								<h2>{job.company+', '+job.location}</h2>
+								<h3>{job.position}</h3>
+								{job.duties.map(function(duty, j){
+									return <p key={j}>&bull; {duty}</p>
+								})}
+							</div>
+						);
+		    		})
+		    	}
 		    </Panel>
 		);
 	}
@@ -28,7 +28,3 @@ var ExperiencePart = React.createClass({
 });
 
 module.exports.component = ExperiencePart;
-
-// {
-// 		    		resume.experience.forEach(this.joblisting);
-// 		    	}

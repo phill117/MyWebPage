@@ -39067,46 +39067,44 @@ var resume = require('./resumedata.json');
 var ExperiencePart = React.createClass({
 	displayName: 'ExperiencePart',
 
-	joblisting: function joblisting(json) {
+	render: function render() {
 		return React.createElement(
-			'div',
-			null,
-			React.createElement(
-				'h2',
-				null,
-				json.company + ', ' + json.location
-			),
-			React.createElement(
-				'h3',
-				null,
-				json.position
-			),
-			json.duties.forEach(function (duty) {
-				React.createElement(
-					'p',
+			Panel,
+			{ bsStyle: 'primary', header: React.createElement(
+					'h3',
 					null,
-					'\'• \'+',
-					duty
+					'Experience'
+				) },
+			resume.experience.map(function (job, i) {
+				return React.createElement(
+					'div',
+					{ key: i },
+					React.createElement(
+						'h2',
+						null,
+						job.company + ', ' + job.location
+					),
+					React.createElement(
+						'h3',
+						null,
+						job.position
+					),
+					job.duties.map(function (duty, j) {
+						return React.createElement(
+							'p',
+							{ key: j },
+							'• ',
+							duty
+						);
+					})
 				);
 			})
 		);
-	},
-
-	render: function render() {
-		return React.createElement(Panel, { bsStyle: 'primary', header: React.createElement(
-				'h3',
-				null,
-				'Experience'
-			) });
 	}
 
 });
 
 module.exports.component = ExperiencePart;
-
-// {
-// 		    		resume.experience.forEach(this.joblisting);
-// 		    	}
 
 },{"./resumedata.json":458,"react":448,"react-bootstrap":97}],452:[function(require,module,exports){
 // main.js
