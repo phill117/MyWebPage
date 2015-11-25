@@ -39119,15 +39119,81 @@ ReactDOM.render(React.createElement(
 
 var React = require('react');
 var ReactBootstrap = require('react-bootstrap');
+var Grid = ReactBootstrap.Grid;
+var Row = ReactBootstrap.Row;
+var Col = ReactBootstrap.Col;
+var Button = ReactBootstrap.Button;
+var Thumbnail = ReactBootstrap.Thumbnail;
+var ButtonGroup = ReactBootstrap.ButtonGroup;
+var Label = ReactBootstrap.Label;
 
 var MusicComponent = React.createClass({
 	displayName: 'MusicComponent',
 
 	render: function render() {
 		return React.createElement(
-			'h1',
+			Grid,
 			null,
-			'Muasdfic'
+			React.createElement(
+				Row,
+				null,
+				React.createElement(
+					Col,
+					{ md: 3 },
+					React.createElement(
+						Thumbnail,
+						{ src: './music/No1.jpg', alt: '242x200' },
+						React.createElement(
+							'h3',
+							null,
+							'String Quartet'
+						),
+						React.createElement(
+							'p',
+							null,
+							'Final Project for MUS 362'
+						),
+						React.createElement(
+							'h3',
+							null,
+							React.createElement(
+								Label,
+								{ bsStyle: 'info' },
+								'2 Violins'
+							),
+							React.createElement(
+								Label,
+								{ bsStyle: 'info' },
+								'Viola'
+							),
+							React.createElement(
+								Label,
+								{ bsStyle: 'info' },
+								'Cello'
+							)
+						),
+						React.createElement(
+							ButtonGroup,
+							{ justified: true },
+							React.createElement(
+								Button,
+								{ href: './music/No1.mp3' },
+								'.mp3'
+							),
+							React.createElement(
+								Button,
+								{ href: './music/No1.pdf' },
+								'.pdf'
+							),
+							React.createElement(
+								Button,
+								{ href: './music/No1.mscz' },
+								'.mscz'
+							)
+						)
+					)
+				)
+			)
 		);
 	}
 
