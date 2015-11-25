@@ -39126,6 +39126,7 @@ var Button = ReactBootstrap.Button;
 var Thumbnail = ReactBootstrap.Thumbnail;
 var ButtonGroup = ReactBootstrap.ButtonGroup;
 var Label = ReactBootstrap.Label;
+var Panel = ReactBootstrap.Panel;
 
 var MusicComponent = React.createClass({
 	displayName: 'MusicComponent',
@@ -39137,6 +39138,11 @@ var MusicComponent = React.createClass({
 			React.createElement(
 				Row,
 				null,
+				React.createElement(
+					Panel,
+					null,
+					'These are some of completed compositions I have written. Take a look! If you like what you hear or would like to use any of my music in a project, shoot me an email at [insert email here later]. I would love to hear what you think. Please do not sell or use any of my compositions for profit without my knowedge. If you really, REALLY like any of my work, you can donate [here] to support my musical endeavors!'
+				),
 				React.createElement(
 					Col,
 					{ md: 3 },
@@ -39161,11 +39167,13 @@ var MusicComponent = React.createClass({
 								{ bsStyle: 'info' },
 								'2 Violins'
 							),
+							' ',
 							React.createElement(
 								Label,
 								{ bsStyle: 'info' },
 								'Viola'
 							),
+							' ',
 							React.createElement(
 								Label,
 								{ bsStyle: 'info' },
@@ -39296,7 +39304,7 @@ var ProfileComponent = React.createClass({
 						React.createElement(
 							'p',
 							null,
-							'I\'m making this website right now thinking, "Man...what am I going to do with all of this screen space?" I suppose I could sell it. I hear seanphillips.me is a pretty in demand URL these days, but then again, whoever buys it might not live up to name. I could write a funny little anecdote.... ....naaaah those are overrated. Besides, I hate righting papers. Why do people think I became a programmer? Because it\'s a fun and rewarding career choice that is high in demand in this current technological era? OF COURSE NOT!!! I haven\'t written an essay in over three years! It\'s like a dream come true! Whelp. This little journal sesh was fun, but it\'s 12:55 AM, and I have class in about seven and half hours. I really need to stop procrastinating sleep. I don\'t know what wrong it ever did me. '
+							'I\'m making this website right now thinking, "Man...what am I going to do with all of this screen space?" I suppose I could sell it. I hear seanphillips.me is a pretty in-demand URL these days, but then again, whoever buys it might not live up to the name. I could write a funny little anecdote.... ....naaaah those are overrated. Besides, I hate writing papers. Why do people think I became a programmer? Because it\'s a fun and rewarding career choice that is high in demand in this current technological era? OF COURSE NOT!!! I haven\'t written an essay in over three years! It\'s like a dream come true! Whelp. This little journal sesh was fun, but it\'s 12:55 AM, and I have class in about seven and half hours. I really need to stop procrastinating on sleep. I don\'t know what wrong it ever did me. '
 						),
 						React.createElement(
 							Row,

@@ -7,6 +7,7 @@ var Button = ReactBootstrap.Button;
 var Thumbnail = ReactBootstrap.Thumbnail;
 var ButtonGroup = ReactBootstrap.ButtonGroup;
 var Label = ReactBootstrap.Label;
+var Panel = ReactBootstrap.Panel;
 
 var MusicComponent = React.createClass({
 
@@ -14,13 +15,17 @@ var MusicComponent = React.createClass({
 		return (
 			<Grid>
 				<Row>
+				<Panel>These are some of completed compositions I have written. Take a look! 
+				If you like what you hear or would like to use any of my music in a project, shoot me an email at [insert email here later]. 
+				I would love to hear what you think. Please do not sell or use any of my compositions for profit without my knowedge. 
+				If you really, REALLY like any of my work, you can donate [here] to support my musical endeavors!</Panel>
 					<Col md={3}>
 						<Thumbnail src="./music/No1.jpg" alt="242x200">
 					        <h3>String Quartet</h3>
 					        <p>Final Project for MUS 362</p>
 					        <h3>
-						        <Label bsStyle='info'>2 Violins</Label>
-						        <Label bsStyle='info'>Viola</Label>
+						        <Label bsStyle='info'>2 Violins</Label>&nbsp;
+						        <Label bsStyle='info'>Viola</Label>&nbsp;
 						        <Label bsStyle='info'>Cello</Label>
 					        </h3>
 				        	<ButtonGroup justified>
