@@ -29,8 +29,8 @@ var MusicComponent = React.createClass({
 						        <Label bsStyle='info'>Cello</Label>
 					        </h3>
 				        	<ButtonGroup justified>
-				        		<Button href='./music/No1.mp3'>.mp3</Button>
-					        	<Button href='./music/No1.pdf'>.pdf</Button>
+				        		<Button target='_blank' href='./music/No1.mp3'>.mp3</Button>
+					        	<Button target='_blank' href='./music/No1.pdf'>.pdf</Button>
 					        	<Button href='./music/No1.mscz'>.mscz</Button>
 				        	</ButtonGroup>
 					    </Thumbnail>
