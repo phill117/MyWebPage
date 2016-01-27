@@ -7,7 +7,7 @@ var ExperiencePart = React.createClass({
 
 	render: function(){
 		return (
-			<Panel bsStyle='primary' header={<h3>Experience</h3>}>
+			<Panel bsStyle='primary' header={<div><span className="fa fa-users fa-lg pull-left"></span><h4>Experience</h4></div>}>
 		    	{
 		    		resume.experience.map(function(job, i){
 	    				return(

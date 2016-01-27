@@ -38999,18 +38999,18 @@ var ContentComponent = React.createClass({
 	render: function render() {
 		return React.createElement(
 			Grid,
-			{ fluid: true },
+			null,
 			React.createElement(
 				Row,
 				null,
 				React.createElement(
 					Col,
-					{ md: 3 },
+					{ md: 4 },
 					React.createElement(ProfileComponent, null)
 				),
 				React.createElement(
 					Col,
-					{ md: 9 },
+					{ md: 8 },
 					React.createElement(ResumeComponent, null)
 				)
 			)
@@ -39035,9 +39035,14 @@ var EducationPart = React.createClass({
 		return React.createElement(
 			Panel,
 			{ bsStyle: 'primary', header: React.createElement(
-					'h3',
+					'div',
 					null,
-					'Education'
+					React.createElement('span', { className: 'fa fa-university fa-lg pull-left' }),
+					React.createElement(
+						'h4',
+						null,
+						'Education'
+					)
 				) },
 			React.createElement(
 				'h4',
@@ -39071,9 +39076,14 @@ var ExperiencePart = React.createClass({
 		return React.createElement(
 			Panel,
 			{ bsStyle: 'primary', header: React.createElement(
-					'h3',
+					'div',
 					null,
-					'Experience'
+					React.createElement('span', { className: 'fa fa-users fa-lg pull-left' }),
+					React.createElement(
+						'h4',
+						null,
+						'Experience'
+					)
 				) },
 			resume.experience.map(function (job, i) {
 				return React.createElement(
@@ -39177,7 +39187,13 @@ var MusicComponent = React.createClass({
 				React.createElement(
 					Panel,
 					null,
-					'These are some of completed compositions I have written. Take a look! If you like what you hear or would like to use any of my music in a project, shoot me an email at [insert email here later]. I would love to hear what you think. Please do not sell or use any of my compositions for profit without my knowedge. If you really, REALLY like any of my work, you can donate [here] to support my musical endeavors!'
+					'These are some of the completed compositions I have written. Take a look! If you like what you hear or would like to use any of my music in a project, shoot me an email at ',
+					React.createElement(
+						'a',
+						{ href: 'mailto:contact@seanphillips.me' },
+						'contact@seanphillips.me'
+					),
+					'. I would love to hear what you think. Please do not sell or use any of my compositions for profit without my knowedge. If you really, REALLY, like any of my work, you can donate [here] to support my musical endeavors!'
 				),
 				React.createElement(
 					Col,
@@ -39367,7 +39383,7 @@ var ProfileComponent = React.createClass({
 								{ style: { textAlign: 'center' }, md: 4 },
 								React.createElement(
 									'a',
-									{ href: 'mailto:smp60450@gmail.com' },
+									{ href: 'mailto:contact@seanphillips.me' },
 									React.createElement(
 										'span',
 										{ className: 'fa-stack fa-2x' },
@@ -39420,6 +39436,7 @@ var Panel = ReactBootstrap.Panel;
 var resume = require('./resumedata.json');
 var EducationPart = require('./education').component;
 var ExperiencePart = require('./experience').component;
+var SkillsPart = require('./skills').component;
 
 // <Panel>
 // 			    <Grid fluid={true}>
@@ -39437,7 +39454,8 @@ var ResumeComponent = React.createClass({
 			'div',
 			null,
 			React.createElement(EducationPart, null),
-			React.createElement(ExperiencePart, null)
+			React.createElement(ExperiencePart, null),
+			React.createElement(SkillsPart, null)
 		);
 	}
 
@@ -39445,7 +39463,7 @@ var ResumeComponent = React.createClass({
 
 module.exports.component = ResumeComponent;
 
-},{"./education":450,"./experience":451,"./resumedata.json":458,"react":448,"react-bootstrap":97}],458:[function(require,module,exports){
+},{"./education":450,"./experience":451,"./resumedata.json":458,"./skills":459,"react":448,"react-bootstrap":97}],458:[function(require,module,exports){
 module.exports={
 	"experience": [
 		{
@@ -39482,7 +39500,51 @@ module.exports={
 	"skills": ["Java", "Scala", "C", "Android", "iOS", "Objective-C", "Swift", "HTML/CSS", "Node.js", "React.js", "SQL", "Git", "Scrum"]
 
 }
-},{}]},{},[452])
+},{}],459:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var ReactBootstrap = require('react-bootstrap');
+var Panel = ReactBootstrap.Panel;
+var Label = ReactBootstrap.Label;
+var resume = require('./resumedata.json');
+
+var SkillsPart = React.createClass({
+	displayName: 'SkillsPart',
+
+	render: function render() {
+		return React.createElement(
+			Panel,
+			{ bsStyle: 'primary', header: React.createElement(
+					'div',
+					null,
+					React.createElement('span', { className: 'fa fa-code fa-lg pull-left' }),
+					React.createElement(
+						'h4',
+						null,
+						'Skills'
+					)
+				) },
+			resume.skills.map(function (skill, i) {
+				return React.createElement(
+					'h3',
+					{ key: i, style: { display: 'inline-block' } },
+					React.createElement(
+						Label,
+						{ bsStyle: 'success' },
+						skill
+					),
+					' '
+				);
+			})
+		);
+	}
+
+});
+
+module.exports.component = SkillsPart;
+
+},{"./resumedata.json":458,"react":448,"react-bootstrap":97}]},{},[452])
 
 
 //# sourceMappingURL=bundle.js.map

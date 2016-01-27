@@ -25,7 +25,7 @@ Whelp. This little journal sesh was fun, but it's 12:55 AM, and I have class in 
 						    	<Col style={{textAlign: 'center'}} md={4}><a href='https://github.com/phill117'><i className="fa fa-github-square fa-4x"></i></a></Col>
 						    	<Col style={{textAlign: 'center'}} md={4}><a href='https://www.linkedin.com/in/sphillips117'><i className="fa fa-linkedin-square fa-4x"></i></a></Col>
 						    	<Col style={{textAlign: 'center'}} md={4}>
-							    	<a href='mailto:smp60450@gmail.com'>
+							    	<a href='mailto:contact@seanphillips.me'>
 							    		<span className="fa-stack fa-2x">
 											<i className="fa fa-square fa-stack-2x"></i>
 											<i className="fa fa-at fa-stack-1x fa-inverse"></i>

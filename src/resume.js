@@ -7,6 +7,7 @@ var Panel = ReactBootstrap.Panel;
 var resume = require('./resumedata.json');
 var EducationPart = require('./education').component;
 var ExperiencePart = require('./experience').component;
+var SkillsPart = require('./skills').component;
 
 // <Panel>
 // 			    <Grid fluid={true}>
@@ -23,6 +24,7 @@ var ResumeComponent = React.createClass({
 			<div>
 				<EducationPart/>
 				<ExperiencePart/>
+				<SkillsPart/>
 			</div>
 		);
 	}

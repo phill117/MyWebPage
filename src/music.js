@@ -15,10 +15,10 @@ var MusicComponent = React.createClass({
 		return (
 			<Grid>
 				<Row>
-				<Panel>These are some of completed compositions I have written. Take a look! 
-				If you like what you hear or would like to use any of my music in a project, shoot me an email at [insert email here later]. 
+				<Panel>These are some of the completed compositions I have written. Take a look! 
+				If you like what you hear or would like to use any of my music in a project, shoot me an email at <a href="mailto:contact@seanphillips.me">contact@seanphillips.me</a>. 
 				I would love to hear what you think. Please do not sell or use any of my compositions for profit without my knowedge. 
-				If you really, REALLY like any of my work, you can donate [here] to support my musical endeavors!</Panel>
+				If you really, REALLY, like any of my work, you can donate [here] to support my musical endeavors!</Panel>
 					<Col md={3}>
 						<Thumbnail src="./music/No1.jpg" alt="242x200">
 					        <h3>String Quartet</h3>

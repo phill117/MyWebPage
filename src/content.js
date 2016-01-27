@@ -10,12 +10,12 @@ var ContentComponent = React.createClass({
 
 	render: function(){
 		return (
-			<Grid fluid={true}>
+			<Grid>
 		    	<Row>
-		    		<Col md={3}>
+		    		<Col md={4}>
 		    			<ProfileComponent/>
 		    		</Col>
-		    		<Col md={9}> 
+		    		<Col md={8}> 
 		    			<ResumeComponent/>
 		    		</Col>
 		    	</Row>
