@@ -1,3 +1,7 @@
+/*
+	JK This is actually the blog file
+*/
+
 var React = require('react');
 var ReactBootstrap = require('react-bootstrap');
 

@@ -13,7 +13,7 @@ var NavBarComponent = React.createClass({
 			<Navbar fixedTop id='myNavBar'>
 			  <Nav id='myInnerNav'>
 			    <LinkContainer to="/portfolio"><NavItem eventKey={1}>My Portfolio</NavItem></LinkContainer>
-			    <LinkContainer to="/projects"><NavItem eventKey={2}>My Projects</NavItem></LinkContainer>
+			    <LinkContainer to="/projects"><NavItem eventKey={2}>My Blog</NavItem></LinkContainer>
 			    <LinkContainer to="/music"><NavItem eventKey={3}>My Music</NavItem></LinkContainer>
 			  </Nav>
 			</Navbar>

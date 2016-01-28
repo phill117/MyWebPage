@@ -23,8 +23,8 @@ var ResumeComponent = React.createClass({
 		return (
 			<div>
 				<EducationPart/>
-				<ExperiencePart/>
 				<SkillsPart/>
+				<ExperiencePart/>
 			</div>
 		);
 	}

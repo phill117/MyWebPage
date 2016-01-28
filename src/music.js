@@ -8,6 +8,7 @@ var Thumbnail = ReactBootstrap.Thumbnail;
 var ButtonGroup = ReactBootstrap.ButtonGroup;
 var Label = ReactBootstrap.Label;
 var Panel = ReactBootstrap.Panel;
+var License = require('./license').component
 
 var MusicComponent = React.createClass({
 
@@ -34,6 +35,11 @@ var MusicComponent = React.createClass({
 					        	<Button href='./music/No1.mscz'>.mscz</Button>
 				        	</ButtonGroup>
 					    </Thumbnail>
+					</Col>
+				</Row>
+				<Row>
+					<Col style={{textAlign: 'center'}}>
+						<License/>
 					</Col>
 				</Row>
 			</Grid>

@@ -39021,7 +39021,7 @@ var ContentComponent = React.createClass({
 
 module.exports.component = ContentComponent;
 
-},{"./profile":455,"./resume":457,"react":448,"react-bootstrap":97}],450:[function(require,module,exports){
+},{"./profile":456,"./resume":458,"react":448,"react-bootstrap":97}],450:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -39116,7 +39116,39 @@ var ExperiencePart = React.createClass({
 
 module.exports.component = ExperiencePart;
 
-},{"./resumedata.json":458,"react":448,"react-bootstrap":97}],452:[function(require,module,exports){
+},{"./resumedata.json":459,"react":448,"react-bootstrap":97}],452:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var ReactBootstrap = require('react-bootstrap');
+
+var LicenseComponent = React.createClass({
+	displayName: 'LicenseComponent',
+
+	render: function render() {
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(
+				'a',
+				{ rel: 'license', href: 'http://creativecommons.org/licenses/by-nc-sa/4.0/' },
+				React.createElement('img', { alt: 'Creative Commons License', style: { borderWidth: 0 }, src: 'https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png' })
+			),
+			React.createElement('br', null),
+			'This work is licensed under a ',
+			React.createElement(
+				'a',
+				{ rel: 'license', href: 'http://creativecommons.org/licenses/by-nc-sa/4.0/' },
+				'Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License'
+			),
+			'.'
+		);
+	}
+});
+
+module.exports.component = LicenseComponent;
+
+},{"react":448,"react-bootstrap":97}],453:[function(require,module,exports){
 // main.js
 'use strict';
 
@@ -39160,7 +39192,7 @@ ReactDOM.render(React.createElement(
   )
 ), document.getElementById('app'));
 
-},{"./content":449,"./music":453,"./navbar":454,"./projects":456,"history/lib/createMemoryHistory":11,"react":448,"react-bootstrap":97,"react-dom":264,"react-router":287}],453:[function(require,module,exports){
+},{"./content":449,"./music":454,"./navbar":455,"./projects":457,"history/lib/createMemoryHistory":11,"react":448,"react-bootstrap":97,"react-dom":264,"react-router":287}],454:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -39173,6 +39205,7 @@ var Thumbnail = ReactBootstrap.Thumbnail;
 var ButtonGroup = ReactBootstrap.ButtonGroup;
 var Label = ReactBootstrap.Label;
 var Panel = ReactBootstrap.Panel;
+var License = require('./license').component;
 
 var MusicComponent = React.createClass({
 	displayName: 'MusicComponent',
@@ -39253,6 +39286,15 @@ var MusicComponent = React.createClass({
 						)
 					)
 				)
+			),
+			React.createElement(
+				Row,
+				null,
+				React.createElement(
+					Col,
+					{ style: { textAlign: 'center' } },
+					React.createElement(License, null)
+				)
 			)
 		);
 	}
@@ -39261,7 +39303,7 @@ var MusicComponent = React.createClass({
 
 module.exports.component = MusicComponent;
 
-},{"react":448,"react-bootstrap":97}],454:[function(require,module,exports){
+},{"./license":452,"react":448,"react-bootstrap":97}],455:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -39297,7 +39339,7 @@ var NavBarComponent = React.createClass({
 					React.createElement(
 						NavItem,
 						{ eventKey: 2 },
-						'My Projects'
+						'My Blog'
 					)
 				),
 				React.createElement(
@@ -39317,7 +39359,7 @@ var NavBarComponent = React.createClass({
 
 module.exports.component = NavBarComponent;
 
-},{"react":448,"react-bootstrap":97,"react-router-bootstrap":267}],455:[function(require,module,exports){
+},{"react":448,"react-bootstrap":97,"react-router-bootstrap":267}],456:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -39362,7 +39404,7 @@ var ProfileComponent = React.createClass({
 							null,
 							React.createElement(
 								Col,
-								{ style: { textAlign: 'center' }, md: 4 },
+								{ style: { textAlign: 'center' }, sm: 4, xs: 2 },
 								React.createElement(
 									'a',
 									{ href: 'https://github.com/phill117' },
@@ -39371,7 +39413,7 @@ var ProfileComponent = React.createClass({
 							),
 							React.createElement(
 								Col,
-								{ style: { textAlign: 'center' }, md: 4 },
+								{ style: { textAlign: 'center' }, sm: 4, xs: 2 },
 								React.createElement(
 									'a',
 									{ href: 'https://www.linkedin.com/in/sphillips117' },
@@ -39380,7 +39422,7 @@ var ProfileComponent = React.createClass({
 							),
 							React.createElement(
 								Col,
-								{ style: { textAlign: 'center' }, md: 4 },
+								{ style: { textAlign: 'center' }, sm: 4, xs: 2 },
 								React.createElement(
 									'a',
 									{ href: 'mailto:contact@seanphillips.me' },
@@ -39403,7 +39445,11 @@ var ProfileComponent = React.createClass({
 
 module.exports.component = ProfileComponent;
 
-},{"react":448,"react-bootstrap":97}],456:[function(require,module,exports){
+},{"react":448,"react-bootstrap":97}],457:[function(require,module,exports){
+/*
+	JK This is actually the blog file
+*/
+
 'use strict';
 
 var React = require('react');
@@ -39424,7 +39470,7 @@ var ProjectsComponent = React.createClass({
 
 module.exports.component = ProjectsComponent;
 
-},{"react":448,"react-bootstrap":97}],457:[function(require,module,exports){
+},{"react":448,"react-bootstrap":97}],458:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -39454,8 +39500,8 @@ var ResumeComponent = React.createClass({
 			'div',
 			null,
 			React.createElement(EducationPart, null),
-			React.createElement(ExperiencePart, null),
-			React.createElement(SkillsPart, null)
+			React.createElement(SkillsPart, null),
+			React.createElement(ExperiencePart, null)
 		);
 	}
 
@@ -39463,7 +39509,7 @@ var ResumeComponent = React.createClass({
 
 module.exports.component = ResumeComponent;
 
-},{"./education":450,"./experience":451,"./resumedata.json":458,"./skills":459,"react":448,"react-bootstrap":97}],458:[function(require,module,exports){
+},{"./education":450,"./experience":451,"./resumedata.json":459,"./skills":460,"react":448,"react-bootstrap":97}],459:[function(require,module,exports){
 module.exports={
 	"experience": [
 		{
@@ -39500,7 +39546,7 @@ module.exports={
 	"skills": ["Java", "Scala", "C", "Android", "iOS", "Objective-C", "Swift", "HTML/CSS", "Node.js", "React.js", "SQL", "Git", "Scrum"]
 
 }
-},{}],459:[function(require,module,exports){
+},{}],460:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -39544,7 +39590,7 @@ var SkillsPart = React.createClass({
 
 module.exports.component = SkillsPart;
 
-},{"./resumedata.json":458,"react":448,"react-bootstrap":97}]},{},[452])
+},{"./resumedata.json":459,"react":448,"react-bootstrap":97}]},{},[453])
 
 
 //# sourceMappingURL=bundle.js.map
