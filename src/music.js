@@ -13,6 +13,12 @@ var SubscribeForm = require('./music_subscribe').component;
 
 var MusicComponent = React.createClass({
 
+	getDefaultProps: function() {
+		return{
+			key: 3
+		};
+	},
+
 	render: function(){
 		return (
 			<Grid>

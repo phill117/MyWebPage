@@ -11,6 +11,12 @@ var Col = ReactBootstrap.Col;
 
 var ProjectsComponent = React.createClass({
 
+	getDefaultProps: function() {
+		return{
+			key: 2
+		};
+	},
+
 	render: function(){
 		return (
 			<Row style={{textAlign: 'center'}}>

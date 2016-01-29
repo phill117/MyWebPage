@@ -12,13 +12,26 @@ var ContentComponent  = require('./content').component;
 var ProjectsComponent = require('./projects').component;
 var MusicComponent    = require('./music').component;
 
+var ReactCSSTransitionGroup = require('react-css-transition-replace');
+
 var MainComponent = React.createClass({
+
+  handleTransition: function(){
+
+  },
 
   render: function(){
     return(
       <div id="content">
         <NavBarComponent/>
-        {this.props.children}
+        <ReactCSSTransitionGroup 
+        transitionName="fade-wait"
+        transitionEnterTimeout={500} 
+        transitionLeaveTimeout={200}>
+          {React.cloneElement(this.props.children, {
+            key: this.props.location.pathname
+          })}
+        </ReactCSSTransitionGroup>
       </div>
     );
   }

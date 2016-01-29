@@ -8,6 +8,12 @@ var Col = ReactBootstrap.Col;
 
 var ContentComponent = React.createClass({
 
+	getDefaultProps: function() {
+		return{
+			key: 1
+		};
+	},
+
 	render: function(){
 		return (
 			<Grid>
