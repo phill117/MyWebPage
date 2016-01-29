@@ -9,6 +9,7 @@ var ButtonGroup = ReactBootstrap.ButtonGroup;
 var Label = ReactBootstrap.Label;
 var Panel = ReactBootstrap.Panel;
 var License = require('./license').component
+var SubscribeForm = require('./music_subscribe').component;
 
 var MusicComponent = React.createClass({
 
@@ -36,6 +37,9 @@ var MusicComponent = React.createClass({
 				        	</ButtonGroup>
 					    </Thumbnail>
 					</Col>
+				</Row>
+				<Row>
+					<SubscribeForm/>
 				</Row>
 				<Row>
 					<Col style={{textAlign: 'center'}}>
