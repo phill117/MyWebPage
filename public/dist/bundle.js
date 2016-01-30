@@ -39772,7 +39772,7 @@ var ContentComponent = React.createClass({
 
 module.exports.component = ContentComponent;
 
-},{"./profile":463,"./resume":465,"react":454,"react-bootstrap":97}],456:[function(require,module,exports){
+},{"./profile":462,"./resume":464,"react":454,"react-bootstrap":97}],456:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -39867,7 +39867,7 @@ var ExperiencePart = React.createClass({
 
 module.exports.component = ExperiencePart;
 
-},{"./resumedata.json":466,"react":454,"react-bootstrap":97}],458:[function(require,module,exports){
+},{"./resumedata.json":465,"react":454,"react-bootstrap":97}],458:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -39879,7 +39879,7 @@ var LicenseComponent = React.createClass({
 	render: function render() {
 		return React.createElement(
 			'div',
-			null,
+			{ style: { marginBottom: '20px' } },
 			React.createElement(
 				'a',
 				{ rel: 'license', href: 'http://creativecommons.org/licenses/by-nc-sa/4.0/' },
@@ -39956,7 +39956,7 @@ ReactDOM.render(React.createElement(
   )
 ), document.getElementById('app'));
 
-},{"./content":455,"./music":460,"./navbar":462,"./projects":464,"history/lib/createMemoryHistory":11,"react":454,"react-bootstrap":97,"react-css-transition-replace":264,"react-dom":266,"react-router":289}],460:[function(require,module,exports){
+},{"./content":455,"./music":460,"./navbar":461,"./projects":463,"history/lib/createMemoryHistory":11,"react":454,"react-bootstrap":97,"react-css-transition-replace":264,"react-dom":266,"react-router":289}],460:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -39970,7 +39970,7 @@ var ButtonGroup = ReactBootstrap.ButtonGroup;
 var Label = ReactBootstrap.Label;
 var Panel = ReactBootstrap.Panel;
 var License = require('./license').component;
-var SubscribeForm = require('./music_subscribe').component;
+var SubscribeForm = require('./subscribe').component;
 
 var MusicComponent = React.createClass({
 	displayName: 'MusicComponent',
@@ -39990,7 +39990,7 @@ var MusicComponent = React.createClass({
 				null,
 				React.createElement(
 					Panel,
-					null,
+					{ className: 'MusicPanel' },
 					'These are some of the completed compositions I have written. Take a look! If you like what you hear or would like to use any of my music in a project, shoot me an email at ',
 					React.createElement(
 						'a',
@@ -40079,53 +40079,7 @@ var MusicComponent = React.createClass({
 
 module.exports.component = MusicComponent;
 
-},{"./license":458,"./music_subscribe":461,"react":454,"react-bootstrap":97}],461:[function(require,module,exports){
-'use strict';
-
-var React = require('react');
-var ReactBootstrap = require('react-bootstrap');
-
-var Button = ReactBootstrap.Button;
-var Input = ReactBootstrap.Input;
-
-var MusicSubscribeComponent = React.createClass({
-	displayName: 'MusicSubscribeComponent',
-
-	getInitialState: function getInitialState() {
-		return {
-			status: false
-		};
-	},
-
-	subscribe: function subscribe() {
-		console.log('heroo?');
-		this.setState({ status: 'true' });
-
-		//todo
-	},
-
-	render: function render() {
-		return React.createElement(
-			'form',
-			null,
-			React.createElement(Input, { bsStyle: !this.state.status ? null : 'success',
-				hasFeedback: true,
-				type: 'email',
-				label: !this.state.status ? "Subscribe to get emails when I upload more music!" : "Thanks! You're now subscribed!",
-				placeholder: 'Enter email...',
-				buttonAfter: React.createElement(
-					Button,
-					{ onClick: this.subscribe },
-					'Submit'
-				) })
-		);
-	}
-
-});
-
-module.exports.component = MusicSubscribeComponent;
-
-},{"react":454,"react-bootstrap":97}],462:[function(require,module,exports){
+},{"./license":458,"./subscribe":467,"react":454,"react-bootstrap":97}],461:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40181,7 +40135,7 @@ var NavBarComponent = React.createClass({
 
 module.exports.component = NavBarComponent;
 
-},{"react":454,"react-bootstrap":97,"react-router-bootstrap":269}],463:[function(require,module,exports){
+},{"react":454,"react-bootstrap":97,"react-router-bootstrap":269}],462:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40267,7 +40221,7 @@ var ProfileComponent = React.createClass({
 
 module.exports.component = ProfileComponent;
 
-},{"react":454,"react-bootstrap":97}],464:[function(require,module,exports){
+},{"react":454,"react-bootstrap":97}],463:[function(require,module,exports){
 /*
 	JK This is actually the blog file
 */
@@ -40277,7 +40231,9 @@ module.exports.component = ProfileComponent;
 var React = require('react');
 var ReactBootstrap = require('react-bootstrap');
 var Jumbotron = ReactBootstrap.Jumbotron;
+var SubscribeForm = require('./subscribe').component;
 
+var Grid = ReactBootstrap.Grid;
 var Row = ReactBootstrap.Row;
 var Col = ReactBootstrap.Col;
 
@@ -40292,28 +40248,37 @@ var ProjectsComponent = React.createClass({
 
 	render: function render() {
 		return React.createElement(
-			Row,
-			{ style: { textAlign: 'center' } },
-			React.createElement(Col, { xs: 3 }),
+			Grid,
+			null,
 			React.createElement(
-				Col,
-				{ xs: 6 },
+				Row,
+				{ style: { textAlign: 'center' } },
+				React.createElement(Col, { xs: 2 }),
 				React.createElement(
-					Jumbotron,
-					null,
+					Col,
+					{ xs: 8 },
 					React.createElement(
-						'h1',
+						Jumbotron,
 						null,
-						'Coming Soon...'
-					),
-					React.createElement(
-						'p',
-						null,
-						'My Blog is still under "construction." It takes a bit to get the good \'ol juices flowing... ya know? Subscribe and I\'ll make sure to let you know of any additions or changes in the future. :)'
+						React.createElement(
+							'h1',
+							null,
+							'Coming Soon...'
+						),
+						React.createElement(
+							'p',
+							null,
+							'My Blog is still under "construction." It takes a bit to get the good \'ol juices flowing... ya know? Subscribe and I\'ll make sure to let you know of any additions or changes in the future. :)'
+						)
 					)
-				)
+				),
+				React.createElement(Col, { xs: 2 })
 			),
-			React.createElement(Col, { xs: 3 })
+			React.createElement(
+				Row,
+				null,
+				React.createElement(SubscribeForm, null)
+			)
 		);
 	}
 
@@ -40321,7 +40286,7 @@ var ProjectsComponent = React.createClass({
 
 module.exports.component = ProjectsComponent;
 
-},{"react":454,"react-bootstrap":97}],465:[function(require,module,exports){
+},{"./subscribe":467,"react":454,"react-bootstrap":97}],464:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40334,14 +40299,6 @@ var resume = require('./resumedata.json');
 var EducationPart = require('./education').component;
 var ExperiencePart = require('./experience').component;
 var SkillsPart = require('./skills').component;
-
-// <Panel>
-// 			    <Grid fluid={true}>
-// 			    	<Row>
-// 			    		<EducationPart/>
-// 			    	</Row>
-// 			    </Grid>
-// 			</Panel>
 
 var ResumeComponent = React.createClass({
 	displayName: 'ResumeComponent',
@@ -40360,7 +40317,7 @@ var ResumeComponent = React.createClass({
 
 module.exports.component = ResumeComponent;
 
-},{"./education":456,"./experience":457,"./resumedata.json":466,"./skills":467,"react":454,"react-bootstrap":97}],466:[function(require,module,exports){
+},{"./education":456,"./experience":457,"./resumedata.json":465,"./skills":466,"react":454,"react-bootstrap":97}],465:[function(require,module,exports){
 module.exports={
 	"experience": [
 		{
@@ -40397,7 +40354,7 @@ module.exports={
 	"skills": ["Java", "Scala", "C", "Android", "iOS", "Objective-C", "Swift", "HTML/CSS", "Node.js", "React.js", "SQL", "Git", "Scrum"]
 
 }
-},{}],467:[function(require,module,exports){
+},{}],466:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40441,7 +40398,83 @@ var SkillsPart = React.createClass({
 
 module.exports.component = SkillsPart;
 
-},{"./resumedata.json":466,"react":454,"react-bootstrap":97}]},{},[459])
+},{"./resumedata.json":465,"react":454,"react-bootstrap":97}],467:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var ReactBootstrap = require('react-bootstrap');
+
+var Button = ReactBootstrap.Button;
+var Input = ReactBootstrap.Input;
+var Well = ReactBootstrap.Well;
+
+var SubscribeComponent = React.createClass({
+	displayName: 'SubscribeComponent',
+
+	getInitialState: function getInitialState() {
+		return {
+			didSubscribe: false
+		};
+	},
+
+	subscribe: function subscribe() {
+		if (this.state.didSubscribe || this.refs.emailAddress.getValue() == '') return;
+		this.setState({ didSubscribe: 'true' });
+
+		var musicRef = new Firebase('https://seanphillips.firebaseio.com/music');
+		var blogRef = new Firebase('https://seanphillips.firebaseio.com/blog');
+
+		if (this.refs.both.checked || this.refs.blog.checked) blogRef.push(this.refs.emailAddress.getValue());
+		if (this.refs.both.checked || this.refs.music.checked) musicRef.push(this.refs.emailAddress.getValue());
+	},
+
+	render: function render() {
+		var labelText = 'Subscribe to get emails when I update my BLOG or upload more MUSIC!';
+		return React.createElement(
+			Well,
+			null,
+			React.createElement(
+				'h3',
+				{ style: { marginTop: '0px' } },
+				'Subscribe!'
+			),
+			React.createElement(
+				'form',
+				null,
+				React.createElement(Input, { ref: 'emailAddress', bsStyle: !this.state.didSubscribe ? null : 'success',
+					hasFeedback: true,
+					type: 'email',
+					label: !this.state.didSubscribe ? labelText : "Thanks! You're now subscribed!",
+					placeholder: '(e.g.) you@example.com',
+					buttonAfter: React.createElement(
+						Button,
+						{ onClick: this.subscribe },
+						'Submit'
+					) }),
+				React.createElement(
+					'p',
+					null,
+					'I want to subscribe to...'
+				),
+				React.createElement(
+					'div',
+					{ style: { display: 'inline' } },
+					React.createElement('input', { ref: 'both', type: 'radio', value: 'Both', name: 'selection', defaultChecked: true }),
+					' Both!   ',
+					React.createElement('input', { ref: 'blog', type: 'radio', value: 'Blog', name: 'selection' }),
+					' Just the Blog   ',
+					React.createElement('input', { ref: 'music', type: 'radio', value: 'Music', name: 'selection' }),
+					' Just the Music'
+				)
+			)
+		);
+	}
+
+});
+
+module.exports.component = SubscribeComponent;
+
+},{"react":454,"react-bootstrap":97}]},{},[459])
 
 
 //# sourceMappingURL=bundle.js.map

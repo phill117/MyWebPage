@@ -9,14 +9,6 @@ var EducationPart = require('./education').component;
 var ExperiencePart = require('./experience').component;
 var SkillsPart = require('./skills').component;
 
-// <Panel>
-// 			    <Grid fluid={true}>
-// 			    	<Row>
-// 			    		<EducationPart/>
-// 			    	</Row>
-// 			    </Grid>
-// 			</Panel>
-
 var ResumeComponent = React.createClass({
 
 	render: function(){

@@ -5,7 +5,7 @@ var LicenseComponent = React.createClass({
 
 	render: function(){
 		return (
-			<div>
+			<div style={{marginBottom: '20px'}}>
 				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
 					<img alt="Creative Commons License" style={{borderWidth:0}} src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
 				</a>
