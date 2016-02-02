@@ -39913,15 +39913,13 @@ var createMemoryHistory = require('history/lib/createMemoryHistory');
 
 var NavBarComponent = require('./navbar').component;
 var ContentComponent = require('./content').component;
-var ProjectsComponent = require('./projects').component;
+var BlogComponent = require('./projects').component;
 var MusicComponent = require('./music').component;
 
 var ReactCSSTransitionGroup = require('react-css-transition-replace');
 
 var MainComponent = React.createClass({
   displayName: 'MainComponent',
-
-  handleTransition: function handleTransition() {},
 
   render: function render() {
     return React.createElement(
@@ -39945,13 +39943,13 @@ var MainComponent = React.createClass({
 
 ReactDOM.render(React.createElement(
   Router,
-  { history: createMemoryHistory() },
+  { history: createBrowserHistory() },
   React.createElement(
     Route,
     { path: '/', component: MainComponent },
     React.createElement(IndexRoute, { component: ContentComponent }),
     React.createElement(Route, { path: 'portfolio', component: ContentComponent }),
-    React.createElement(Route, { path: 'projects', component: ProjectsComponent }),
+    React.createElement(Route, { path: 'blog', component: BlogComponent }),
     React.createElement(Route, { path: 'music', component: MusicComponent })
   )
 ), document.getElementById('app'));
@@ -40004,7 +40002,7 @@ var MusicComponent = React.createClass({
 					{ md: 3 },
 					React.createElement(
 						Thumbnail,
-						{ src: './music/No1.jpg', alt: '242x200' },
+						{ src: './muzic/No1.jpg', alt: '242x200' },
 						React.createElement(
 							'h3',
 							null,
@@ -40041,17 +40039,17 @@ var MusicComponent = React.createClass({
 							{ justified: true },
 							React.createElement(
 								Button,
-								{ target: '_blank', href: './music/No1.mp3' },
+								{ target: '_blank', href: './muzic/No1.mp3' },
 								'.mp3'
 							),
 							React.createElement(
 								Button,
-								{ target: '_blank', href: './music/No1.pdf' },
+								{ target: '_blank', href: './muzic/No1.pdf' },
 								'.pdf'
 							),
 							React.createElement(
 								Button,
-								{ href: './music/No1.mscz' },
+								{ href: './muzic/No1.mscz' },
 								'.mscz'
 							)
 						)
@@ -40111,7 +40109,7 @@ var NavBarComponent = React.createClass({
 				),
 				React.createElement(
 					LinkContainer,
-					{ to: '/projects' },
+					{ to: '/blog' },
 					React.createElement(
 						NavItem,
 						{ eventKey: 2 },
