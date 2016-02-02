@@ -5,7 +5,7 @@ var ReactBootstrap = require('react-bootstrap');
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var IndexRoute = require('react-router').IndexRoute;
-var createMemoryHistory = require('history/lib/createMemoryHistory');
+var createBrowserHistory = require('history/lib/createBrowserHistory');
 
 var NavBarComponent   = require('./navbar').component;
 var ContentComponent  = require('./content').component;
