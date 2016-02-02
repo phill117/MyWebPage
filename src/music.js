@@ -28,7 +28,7 @@ var MusicComponent = React.createClass({
 					I would love to hear what you think. Please do not sell or use any of my compositions for profit without my knowedge. 
 					If you really, REALLY, like any of my work, you can donate [here] to support my musical endeavors!</Panel>
 					<Col md={3}>
-						<Thumbnail src="./music/No1.jpg" alt="242x200">
+						<Thumbnail src="./muzic/No1.jpg" alt="242x200">
 					        <h3>String Quartet</h3>
 					        <p>Final Project for MUS 362</p>
 					        <h3>
@@ -37,9 +37,9 @@ var MusicComponent = React.createClass({
 						        <Label bsStyle='info'>Cello</Label>
 					        </h3>
 				        	<ButtonGroup justified>
-				        		<Button target='_blank' href='./music/No1.mp3'>.mp3</Button>
-					        	<Button target='_blank' href='./music/No1.pdf'>.pdf</Button>
-					        	<Button href='./music/No1.mscz'>.mscz</Button>
+				        		<Button target='_blank' href='./muzic/No1.mp3'>.mp3</Button>
+					        	<Button target='_blank' href='./muzic/No1.pdf'>.pdf</Button>
+					        	<Button href='./muzic/No1.mscz'>.mscz</Button>
 				        	</ButtonGroup>
 					    </Thumbnail>
 					</Col>
