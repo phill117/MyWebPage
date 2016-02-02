@@ -9,16 +9,12 @@ var createMemoryHistory = require('history/lib/createMemoryHistory');
 
 var NavBarComponent   = require('./navbar').component;
 var ContentComponent  = require('./content').component;
-var ProjectsComponent = require('./projects').component;
+var BlogComponent = require('./projects').component;
 var MusicComponent    = require('./music').component;
 
 var ReactCSSTransitionGroup = require('react-css-transition-replace');
 
 var MainComponent = React.createClass({
-
-  handleTransition: function(){
-
-  },
 
   render: function(){
     return(
@@ -39,11 +35,11 @@ var MainComponent = React.createClass({
 });
 
 ReactDOM.render((
-  <Router history={createMemoryHistory()}>
+  <Router history={createBrowserHistory()}>
     <Route path="/" component={MainComponent}>
       <IndexRoute component={ContentComponent}/>
       <Route path="portfolio" component={ContentComponent}  />
-      <Route path="projects"  component={ProjectsComponent} />
+      <Route path="blog"      component={BlogComponent}     />
       <Route path="music"     component={MusicComponent}    />
     </Route>
   </Router>
