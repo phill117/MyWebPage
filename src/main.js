@@ -6,6 +6,7 @@ var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var IndexRoute = require('react-router').IndexRoute;
 var createBrowserHistory = require('history/lib/createBrowserHistory');
+var createMemoryHistory = require('history/lib/createMemoryHistory');
 
 var NavBarComponent   = require('./navbar').component;
 var ContentComponent  = require('./content').component;
@@ -35,6 +36,7 @@ var MainComponent = React.createClass({
 });
 
 ReactDOM.render((
+  
   <Router history={createBrowserHistory()}>
     <Route path="/" component={MainComponent}>
       <IndexRoute component={ContentComponent}/>
@@ -44,3 +46,4 @@ ReactDOM.render((
     </Route>
   </Router>
 ), document.getElementById('app'));
+// <Router history={createMemoryHistory()}>

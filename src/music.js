@@ -10,6 +10,8 @@ var Label = ReactBootstrap.Label;
 var Panel = ReactBootstrap.Panel;
 var License = require('./license').component
 var SubscribeForm = require('./subscribe').component;
+var sheets = require('./musicdata.json');
+var SheetComponent = require('./sheet').component;
 
 var MusicComponent = React.createClass({
 
@@ -27,22 +29,17 @@ var MusicComponent = React.createClass({
 					If you like what you hear or would like to use any of my music in a project, shoot me an email at <a href="mailto:contact@seanphillips.me">contact@seanphillips.me</a>. 
 					I would love to hear what you think. Please do not sell or use any of my compositions for profit without my knowedge. 
 					If you really, REALLY, like any of my work, you can donate [here] to support my musical endeavors!</Panel>
-					<Col md={3}>
-						<Thumbnail src="./muzic/No1.jpg" alt="242x200">
-					        <h3>String Quartet</h3>
-					        <p>Final Project for MUS 362</p>
-					        <h3>
-						        <Label bsStyle='info'>2 Violins</Label>&nbsp;
-						        <Label bsStyle='info'>Viola</Label>&nbsp;
-						        <Label bsStyle='info'>Cello</Label>
-					        </h3>
-				        	<ButtonGroup justified>
-				        		<Button target='_blank' href='./muzic/No1.mp3'>.mp3</Button>
-					        	<Button target='_blank' href='./muzic/No1.pdf'>.pdf</Button>
-					        	<Button href='./muzic/No1.mscz'>.mscz</Button>
-				        	</ButtonGroup>
-					    </Thumbnail>
-					</Col>
+					
+					{
+			    		sheets.map(function(item, i){
+		    				return(
+			    				<Col key={i} md={3}>
+			    					<SheetComponent fileName={item.title} tags={item.tags} description={item.description} header={item.header} />
+			    				</Col>
+							);
+			    		})
+		    		}
+					
 				</Row>
 				<Row>
 					<SubscribeForm/>

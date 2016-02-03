@@ -39948,7 +39948,7 @@ var ContentComponent = React.createClass({
 
 module.exports.component = ContentComponent;
 
-},{"./profile":463,"./resume":465,"react":455,"react-bootstrap":98}],457:[function(require,module,exports){
+},{"./profile":464,"./resume":466,"react":455,"react-bootstrap":98}],457:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40043,7 +40043,7 @@ var ExperiencePart = React.createClass({
 
 module.exports.component = ExperiencePart;
 
-},{"./resumedata.json":466,"react":455,"react-bootstrap":98}],459:[function(require,module,exports){
+},{"./resumedata.json":467,"react":455,"react-bootstrap":98}],459:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40086,6 +40086,7 @@ var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var IndexRoute = require('react-router').IndexRoute;
 var createBrowserHistory = require('history/lib/createBrowserHistory');
+var createMemoryHistory = require('history/lib/createMemoryHistory');
 
 var NavBarComponent = require('./navbar').component;
 var ContentComponent = require('./content').component;
@@ -40129,8 +40130,9 @@ ReactDOM.render(React.createElement(
     React.createElement(Route, { path: 'music', component: MusicComponent })
   )
 ), document.getElementById('app'));
+// <Router history={createMemoryHistory()}>
 
-},{"./content":456,"./music":461,"./navbar":462,"./projects":464,"history/lib/createBrowserHistory":7,"react":455,"react-bootstrap":98,"react-css-transition-replace":265,"react-dom":267,"react-router":290}],461:[function(require,module,exports){
+},{"./content":456,"./music":461,"./navbar":463,"./projects":465,"history/lib/createBrowserHistory":7,"history/lib/createMemoryHistory":12,"react":455,"react-bootstrap":98,"react-css-transition-replace":265,"react-dom":267,"react-router":290}],461:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40145,6 +40147,8 @@ var Label = ReactBootstrap.Label;
 var Panel = ReactBootstrap.Panel;
 var License = require('./license').component;
 var SubscribeForm = require('./subscribe').component;
+var sheets = require('./musicdata.json');
+var SheetComponent = require('./sheet').component;
 
 var MusicComponent = React.createClass({
 	displayName: 'MusicComponent',
@@ -40173,64 +40177,13 @@ var MusicComponent = React.createClass({
 					),
 					'. I would love to hear what you think. Please do not sell or use any of my compositions for profit without my knowedge. If you really, REALLY, like any of my work, you can donate [here] to support my musical endeavors!'
 				),
-				React.createElement(
-					Col,
-					{ md: 3 },
-					React.createElement(
-						Thumbnail,
-						{ src: './muzic/No1.jpg', alt: '242x200' },
-						React.createElement(
-							'h3',
-							null,
-							'String Quartet'
-						),
-						React.createElement(
-							'p',
-							null,
-							'Final Project for MUS 362'
-						),
-						React.createElement(
-							'h3',
-							null,
-							React.createElement(
-								Label,
-								{ bsStyle: 'info' },
-								'2 Violins'
-							),
-							' ',
-							React.createElement(
-								Label,
-								{ bsStyle: 'info' },
-								'Viola'
-							),
-							' ',
-							React.createElement(
-								Label,
-								{ bsStyle: 'info' },
-								'Cello'
-							)
-						),
-						React.createElement(
-							ButtonGroup,
-							{ justified: true },
-							React.createElement(
-								Button,
-								{ target: '_blank', href: './muzic/No1.mp3' },
-								'.mp3'
-							),
-							React.createElement(
-								Button,
-								{ target: '_blank', href: './muzic/No1.pdf' },
-								'.pdf'
-							),
-							React.createElement(
-								Button,
-								{ href: './muzic/No1.mscz' },
-								'.mscz'
-							)
-						)
-					)
-				)
+				sheets.map(function (item, i) {
+					return React.createElement(
+						Col,
+						{ key: i, md: 3 },
+						React.createElement(SheetComponent, { fileName: item.title, tags: item.tags, description: item.description, header: item.header })
+					);
+				})
 			),
 			React.createElement(
 				Row,
@@ -40253,7 +40206,16 @@ var MusicComponent = React.createClass({
 
 module.exports.component = MusicComponent;
 
-},{"./license":459,"./subscribe":468,"react":455,"react-bootstrap":98}],462:[function(require,module,exports){
+},{"./license":459,"./musicdata.json":462,"./sheet":468,"./subscribe":470,"react":455,"react-bootstrap":98}],462:[function(require,module,exports){
+module.exports=[
+	{		
+			"title": "No1",
+			"description": "Final Project for MUS 362",
+			"tags": ["2 Violins", "Viola", "Cello"],
+			"header": "String Quartet"	
+	}
+]
+},{}],463:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40309,7 +40271,7 @@ var NavBarComponent = React.createClass({
 
 module.exports.component = NavBarComponent;
 
-},{"react":455,"react-bootstrap":98,"react-router-bootstrap":270}],463:[function(require,module,exports){
+},{"react":455,"react-bootstrap":98,"react-router-bootstrap":270}],464:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40395,7 +40357,7 @@ var ProfileComponent = React.createClass({
 
 module.exports.component = ProfileComponent;
 
-},{"react":455,"react-bootstrap":98}],464:[function(require,module,exports){
+},{"react":455,"react-bootstrap":98}],465:[function(require,module,exports){
 /*
 	JK This is actually the blog file
 */
@@ -40460,7 +40422,7 @@ var ProjectsComponent = React.createClass({
 
 module.exports.component = ProjectsComponent;
 
-},{"./subscribe":468,"react":455,"react-bootstrap":98}],465:[function(require,module,exports){
+},{"./subscribe":470,"react":455,"react-bootstrap":98}],466:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40491,7 +40453,7 @@ var ResumeComponent = React.createClass({
 
 module.exports.component = ResumeComponent;
 
-},{"./education":457,"./experience":458,"./resumedata.json":466,"./skills":467,"react":455,"react-bootstrap":98}],466:[function(require,module,exports){
+},{"./education":457,"./experience":458,"./resumedata.json":467,"./skills":469,"react":455,"react-bootstrap":98}],467:[function(require,module,exports){
 module.exports={
 	"experience": [
 		{
@@ -40528,7 +40490,84 @@ module.exports={
 	"skills": ["Java", "Scala", "C", "Android", "iOS", "Objective-C", "Swift", "HTML/CSS", "Node.js", "React.js", "SQL", "Git", "Scrum"]
 
 }
-},{}],467:[function(require,module,exports){
+},{}],468:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var ReactBootstrap = require('react-bootstrap');
+var Button = ReactBootstrap.Button;
+var Thumbnail = ReactBootstrap.Thumbnail;
+var ButtonGroup = ReactBootstrap.ButtonGroup;
+var Label = ReactBootstrap.Label;
+var Panel = ReactBootstrap.Panel;
+
+var SheetComponent = React.createClass({
+	displayName: 'SheetComponent',
+
+	propTypes: {
+		fileName: React.PropTypes.string.isRequired,
+		tags: React.PropTypes.array.isRequired,
+		description: React.PropTypes.string.isRequired,
+		header: React.PropTypes.string.isRequired
+	},
+
+	render: function render() {
+
+		return React.createElement(
+			Thumbnail,
+			{ src: "./muzic/" + this.props.fileName + ".jpg", alt: '242x200' },
+			React.createElement(
+				'h3',
+				null,
+				this.props.header
+			),
+			React.createElement(
+				'p',
+				null,
+				this.props.description
+			),
+			React.createElement(
+				'h3',
+				null,
+				this.props.tags.map(function (tag, i) {
+					return React.createElement(
+						Label,
+						{ style: { marginLeft: "2px" }, key: i, bsStyle: 'info' },
+						tag
+					);
+				})
+			),
+			React.createElement(
+				ButtonGroup,
+				{ justified: true },
+				React.createElement(
+					Button,
+					{ target: '_blank', href: './muzic/' + this.props.fileName + '.mp3' },
+					'.mp3'
+				),
+				React.createElement(
+					Button,
+					{ target: '_blank', href: './muzic/' + this.props.fileName + '.pdf' },
+					'.pdf'
+				),
+				React.createElement(
+					Button,
+					{ href: './muzic/' + this.props.fileName + '.mscz' },
+					'.mscz'
+				)
+			)
+		);
+	}
+
+});
+
+module.exports.component = SheetComponent;
+
+// <Label bsStyle='info'>2 Violins</Label>&nbsp;
+// 			        <Label bsStyle='info'>Viola</Label>&nbsp;
+// 			        <Label bsStyle='info'>Cello</Label>
+
+},{"react":455,"react-bootstrap":98}],469:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -40572,7 +40611,7 @@ var SkillsPart = React.createClass({
 
 module.exports.component = SkillsPart;
 
-},{"./resumedata.json":466,"react":455,"react-bootstrap":98}],468:[function(require,module,exports){
+},{"./resumedata.json":467,"react":455,"react-bootstrap":98}],470:[function(require,module,exports){
 'use strict';
 
 var React = require('react');

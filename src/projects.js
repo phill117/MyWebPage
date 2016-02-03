@@ -33,7 +33,7 @@ var ProjectsComponent = React.createClass({
 					<Col xs={2}/>
 				</Row>
 				<Row>
-						<SubscribeForm/>
+					<SubscribeForm/>
 				</Row>
 			</Grid>
 		);
