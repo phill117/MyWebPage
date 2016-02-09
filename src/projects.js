@@ -34,11 +34,12 @@ var ProjectsComponent = React.createClass({
 	readTextFile: function(file) {
 	    var rawFile = new XMLHttpRequest();
 	    rawFile.open("GET", file, false);
+	    var self = this;
 	    rawFile.onreadystatechange = function () {
 	        if(rawFile.readyState === 4) {
 	            if(rawFile.status === 200 || rawFile.status == 0) {
 	            	var text = rawFile.responseText;
-	            	this.setState({
+	            	self.setState({
 	                	content: text
 	            	});
 	            }
