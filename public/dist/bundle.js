@@ -40539,7 +40539,11 @@ var ProjectsComponent = React.createClass({
 				React.createElement(
 					Col,
 					{ xs: 8 },
-					React.createElement(Panel, { dangerouslySetInnerHTML: { __html: this.state.content } })
+					React.createElement(
+						Panel,
+						null,
+						React.createElement('div', { dangerouslySetInnerHTML: { __html: this.state.content } })
+					)
 				),
 				React.createElement(Col, { xs: 2 })
 			),

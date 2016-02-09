@@ -72,7 +72,9 @@ var ProjectsComponent = React.createClass({
 						</Panel>
 					</Col>
 					<Col xs={8}>
-						<Panel dangerouslySetInnerHTML={{__html: this.state.content}}/>
+						<Panel>
+							<div dangerouslySetInnerHTML={{__html: this.state.content}}/>
+						</Panel>
 					</Col>
 					<Col xs={2}/>
 				</Row>
