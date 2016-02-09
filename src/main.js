@@ -36,7 +36,6 @@ var MainComponent = React.createClass({
 });
 
 ReactDOM.render((
-  
   <Router history={createBrowserHistory()}>
     <Route path="/" component={MainComponent}>
       <IndexRoute component={ContentComponent}/>

@@ -33,7 +33,7 @@ var MusicComponent = React.createClass({
 					{
 			    		sheets.map(function(item, i){
 		    				return(
-			    				<Col key={i} md={3}>
+			    				<Col key={i} md={4}>
 			    					<SheetComponent fileName={item.title} tags={item.tags} description={item.description} header={item.header} />
 			    				</Col>
 							);

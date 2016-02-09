@@ -5,6 +5,8 @@ var Thumbnail = ReactBootstrap.Thumbnail;
 var ButtonGroup = ReactBootstrap.ButtonGroup;
 var Label = ReactBootstrap.Label;
 var Panel = ReactBootstrap.Panel;
+var Glyphicon = ReactBootstrap.Glyphicon;
+var Image = ReactBootstrap.Image;
 
 var SheetComponent = React.createClass({
 
@@ -31,9 +33,13 @@ var SheetComponent = React.createClass({
 	    		}
 		        </h3>
 	        	<ButtonGroup justified>
-	        		<Button target='_blank' href={'./muzic/'+this.props.fileName+'.mp3'}>.mp3</Button>
-		        	<Button target='_blank' href={'./muzic/'+this.props.fileName+'.pdf'}>.pdf</Button>
-		        	<Button href={'./muzic/'+this.props.fileName+'.mscz'}>.mscz</Button>
+	        		<Button target='_blank' href={'./muzic/'+this.props.fileName+'.mp3'}><i className="fa fa-music fa-lg"></i>&nbsp; .MP3</Button>
+		        	<Button target='_blank' href={'./muzic/'+this.props.fileName+'.pdf'}>
+		        		<div style={{verticalAlign:"middle"}}><img src="./assets/PDF_icon_24.png" style={{margin: "0"}} /> .PDF</div>
+		        	</Button>
+		        	<Button href={'./muzic/'+this.props.fileName+'.mscz'}>
+		        		<div style={{verticalAlign:"middle"}}><img src="./assets/musescore_icon_24.png" style={{margin: "0"}} /> .MSCZ</div>
+		        	</Button>
 	        	</ButtonGroup>
 		    </Thumbnail>
 		);
