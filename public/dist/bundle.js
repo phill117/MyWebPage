@@ -40524,7 +40524,7 @@ var ProjectsComponent = React.createClass({
 								{ key: i, nodeLabel: item.topic, defaultCollapsed: true },
 								item.titles.map(function (article, j) {
 									var handleClick = function handleClick() {
-										self.readTextFile('./src/projects.js');
+										self.readTextFile('./blogs/lorem.html');
 									};
 									return React.createElement(
 										'a',
@@ -40539,11 +40539,7 @@ var ProjectsComponent = React.createClass({
 				React.createElement(
 					Col,
 					{ xs: 8 },
-					React.createElement(
-						Panel,
-						null,
-						this.state.content
-					)
+					React.createElement(Panel, { dangerouslySetInnerHTML: { __html: this.state.content } })
 				),
 				React.createElement(Col, { xs: 2 })
 			),

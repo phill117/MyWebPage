@@ -61,7 +61,7 @@ var ProjectsComponent = React.createClass({
 			    					<TreeView key={i} nodeLabel={item.topic} defaultCollapsed={true}>
 		    						{
 		    							item.titles.map(function(article, j){
-		    								var handleClick = function(){self.readTextFile('./src/projects.js')};
+		    								var handleClick = function(){self.readTextFile('./blogs/lorem.html')};
 		    								return(<a style={{display: 'block'}} onClick={handleClick} key={j}>{article}</a>);
 		    							})
 		    						}
@@ -72,9 +72,7 @@ var ProjectsComponent = React.createClass({
 						</Panel>
 					</Col>
 					<Col xs={8}>
-						<Panel>
-							{this.state.content}
-						</Panel>
+						<Panel dangerouslySetInnerHTML={{__html: this.state.content}}/>
 					</Col>
 					<Col xs={2}/>
 				</Row>
