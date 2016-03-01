@@ -39994,11 +39994,18 @@ module.exports = require('./lib/React');
 },{"./lib/React":321}],457:[function(require,module,exports){
 module.exports=[
 	{		
-			"topic": "Arduino",
-			"titles": [
-				"Lights!",
-				"Other Name!"
-			]
+		"topic": "Arduino",
+		"titles": [
+			{"string": "Lights!", "file": "soon"}
+		]
+	},
+	{
+		"topic": "Australia",
+		"titles": [
+			{"string": "Introduction", "file": "aus_intro"},
+			{"string": "Food & Drink", "file": "soon"},
+			{"string": "Slang & Lingo", "file": "soon"}
+		]
 	}
 ]
 },{}],458:[function(require,module,exports){
@@ -40477,7 +40484,7 @@ var ProjectsComponent = React.createClass({
 
 	getInitialState: function getInitialState() {
 		return {
-			content: ''
+			content: WelcomeShit
 		};
 	},
 
@@ -40524,12 +40531,12 @@ var ProjectsComponent = React.createClass({
 								{ key: i, nodeLabel: item.topic, defaultCollapsed: true },
 								item.titles.map(function (article, j) {
 									var handleClick = function handleClick() {
-										self.readTextFile('./blogs/lorem.html');
+										self.readTextFile('./blogs/' + article.file + '.html');
 									};
 									return React.createElement(
 										'a',
 										{ style: { display: 'block' }, onClick: handleClick, key: j },
-										article
+										article.string
 									);
 								})
 							);
@@ -40560,12 +40567,15 @@ var ProjectsComponent = React.createClass({
 	}
 
 });
+
 // <Jumbotron>
 // 	<h1>Coming Soon...</h1>
 //     <p>My Blog is still under "construction." It takes a bit to get the good 'ol juices flowing... ya know? Subscribe and I'll make sure to let you know of any additions or changes in the future. :)</p>
 // </Jumbotron>
 
 module.exports.component = ProjectsComponent;
+
+var WelcomeShit = "<div><h1>Welcome!</h1>" + "<h4><p>As you probably know by now, this is my personal blog, since you did, in fact, willing click on the button labelled \"Blog\" at the top of the screen, just a moment ago. It is currently in its infantile stages, but I hope that after some undisclosed period of time, it will blossom into something wonderful to look back on.</p>" + "<p>...Or something something so haneous that I want to tear my own eyes out at the very thought of its very existance. I mean, after all, I do hate writing. And if everything goes as expected, you probably will too after reading what I have to say.</p>" + "<p>...but I digress.</p>" + "<p>I'll primarily use this blog for things like my personal projects such as my light up keyboard, my trip down under, and whatever else I deem worth to type with my precious fingers. After all, carpol tunnel is the real evil here, and I'm not distancing myself from it by click-clackin' away on this here blog.</p></h4>" + "</div>";
 
 },{"./blogdata.json":457,"./subscribe":472,"react":456,"react-bootstrap":98,"react-treeview":297}],468:[function(require,module,exports){
 'use strict';

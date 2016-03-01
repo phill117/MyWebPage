@@ -21,7 +21,7 @@ var ProjectsComponent = React.createClass({
 
 	getInitialState: function() {
 	    return {
-		    content: ''
+		    content: WelcomeShit
 	    };
 	},
 
@@ -61,8 +61,8 @@ var ProjectsComponent = React.createClass({
 			    					<TreeView key={i} nodeLabel={item.topic} defaultCollapsed={true}>
 		    						{
 		    							item.titles.map(function(article, j){
-		    								var handleClick = function(){self.readTextFile('./blogs/lorem.html')};
-		    								return(<a style={{display: 'block'}} onClick={handleClick} key={j}>{article}</a>);
+		    								var handleClick = function(){self.readTextFile('./blogs/'+article.file+'.html')};
+		    								return(<a style={{display: 'block'}} onClick={handleClick} key={j}>{article.string}</a>);
 		    							})
 		    						}
 				    				</TreeView>
@@ -88,6 +88,7 @@ var ProjectsComponent = React.createClass({
 	}
 
 });
+
 // <Jumbotron>
 // 	<h1>Coming Soon...</h1>
 //     <p>My Blog is still under "construction." It takes a bit to get the good 'ol juices flowing... ya know? Subscribe and I'll make sure to let you know of any additions or changes in the future. :)</p>
@@ -95,3 +96,10 @@ var ProjectsComponent = React.createClass({
 
 							
 module.exports.component = ProjectsComponent;
+
+const WelcomeShit = "<div><h1>Welcome!</h1>"+
+						"<h4><p>As you probably know by now, this is my personal blog, since you did, in fact, willing click on the button labelled \"Blog\" at the top of the screen, just a moment ago. It is currently in its infantile stages, but I hope that after some undisclosed period of time, it will blossom into something wonderful to look back on.</p>"+
+						"<p>...Or something something so haneous that I want to tear my own eyes out at the very thought of its very existance. I mean, after all, I do hate writing. And if everything goes as expected, you probably will too after reading what I have to say.</p>"+
+						"<p>...but I digress.</p>"+
+						"<p>I'll primarily use this blog for things like my personal projects such as my light up keyboard, my trip down under, and whatever else I deem worth to type with my precious fingers. After all, carpol tunnel is the real evil here, and I'm not distancing myself from it by click-clackin' away on this here blog.</p></h4>"+
+					"</div>";
