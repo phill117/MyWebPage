@@ -40318,6 +40318,12 @@ module.exports=[
 			"description": "Final Project for MUS 362",
 			"tags": ["2 Violins", "Viola", "Cello"],
 			"header": "String Quartet"	
+	},
+	{		
+			"title": "Downfall",
+			"description": "A 'thematic' piece for solo piano. Features chromatic motifs to convey a shift in musical plot.",
+			"tags": ["Piano"],
+			"header": "Solo Piano"	
 	}
 ]
 },{}],465:[function(require,module,exports){
