@@ -53016,13 +53016,14 @@ var ProjectsComponent = React.createClass({
 			null,
 			React.createElement(
 				Menu,
-				{ styles: styles },
+				{ ref: 'theMenu', styles: styles },
 				topics.map(function (item, i) {
 					return React.createElement(
 						TreeView,
 						{ key: i, nodeLabel: item.topic, defaultCollapsed: true },
 						item.titles.map(function (article, j) {
 							var handleClick = function handleClick() {
+								self.refs.theMenu.toggleMenu(false);
 								self.readTextFile('./blogs/' + article.file + '.html');
 							};
 							return React.createElement(

@@ -52,14 +52,17 @@ var ProjectsComponent = React.createClass({
 		var self = this;
 		return (
 			<div>
-				<Menu styles={styles}>
+				<Menu ref="theMenu" styles={styles}>
 				{
 					topics.map(function(item, i){
     					return(
 	    					<TreeView key={i} nodeLabel={item.topic} defaultCollapsed={true}>
     						{
     							item.titles.map(function(article, j){
-    								var handleClick = function(){self.readTextFile('./blogs/'+article.file+'.html')};
+    								var handleClick = function(){
+    									self.refs.theMenu.toggleMenu(false);
+    									self.readTextFile('./blogs/'+article.file+'.html');
+    								};
     								return(<a style={{display: 'block'}} onClick={handleClick} key={j}>{article.string}</a>);
     							})
     						}
