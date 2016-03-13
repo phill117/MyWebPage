@@ -12,9 +12,9 @@ var NavBarComponent = React.createClass({
 		return (
 			<Navbar fixedTop id='myNavBar'>
 			  <Nav id='myInnerNav'>
-			    <LinkContainer to="/portfolio"><NavItem eventKey={1}>My Portfolio</NavItem></LinkContainer>
-			    <LinkContainer to="/blog"><NavItem eventKey={2}>My Blog</NavItem></LinkContainer>
-			    <LinkContainer to="/music"><NavItem eventKey={3}>My Music</NavItem></LinkContainer>
+			    <LinkContainer to="/portfolio"><NavItem eventKey={1}>Portfolio</NavItem></LinkContainer>
+			    <LinkContainer to="/blog"><NavItem eventKey={2}>Blog</NavItem></LinkContainer>
+			    <LinkContainer to="/music"><NavItem eventKey={3}>Compositions</NavItem></LinkContainer>
 			  </Nav>
 			</Navbar>
 		);

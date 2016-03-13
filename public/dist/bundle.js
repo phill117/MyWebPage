@@ -52717,7 +52717,7 @@ var MainComponent = React.createClass({
 
 ReactDOM.render(React.createElement(
   Router,
-  { history: createMemoryHistory() },
+  { history: createBrowserHistory() },
   React.createElement(
     Route,
     { path: '/', component: MainComponent },
@@ -52727,7 +52727,7 @@ ReactDOM.render(React.createElement(
     React.createElement(Route, { path: 'music', component: MusicComponent })
   )
 ), document.getElementById('app'));
-// <Router history={createBrowserHistory()}>
+// <Router history={createMemoryHistory()}>
 
 },{"./content":520,"./music":525,"./navbar":527,"./projects":529,"history/lib/createBrowserHistory":7,"history/lib/createMemoryHistory":12,"react":518,"react-bootstrap":98,"react-css-transition-replace":327,"react-dom":329,"react-router":352}],525:[function(require,module,exports){
 'use strict';
@@ -52845,7 +52845,7 @@ var NavBarComponent = React.createClass({
 					React.createElement(
 						NavItem,
 						{ eventKey: 1 },
-						'My Portfolio'
+						'Portfolio'
 					)
 				),
 				React.createElement(
@@ -52854,7 +52854,7 @@ var NavBarComponent = React.createClass({
 					React.createElement(
 						NavItem,
 						{ eventKey: 2 },
-						'My Blog'
+						'Blog'
 					)
 				),
 				React.createElement(
@@ -52863,7 +52863,7 @@ var NavBarComponent = React.createClass({
 					React.createElement(
 						NavItem,
 						{ eventKey: 3 },
-						'My Music'
+						'Compositions'
 					)
 				)
 			)

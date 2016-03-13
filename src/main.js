@@ -36,7 +36,7 @@ var MainComponent = React.createClass({
 });
 
 ReactDOM.render((
-  <Router history={createMemoryHistory()}>
+  <Router history={createBrowserHistory()}>
     <Route path="/" component={MainComponent}>
       <IndexRoute component={ContentComponent}/>
       <Route path="portfolio" component={ContentComponent}  />
@@ -45,4 +45,4 @@ ReactDOM.render((
     </Route>
   </Router>
 ), document.getElementById('app'));
-// <Router history={createBrowserHistory()}>
+// <Router history={createMemoryHistory()}>
