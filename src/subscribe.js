@@ -31,7 +31,7 @@ var SubscribeComponent = React.createClass({
 		return (
 			<Well><h3 style={{marginTop: '0px'}}>Subscribe!</h3>
 				<form>
-					<Input ref="emailAddress" bsStyle={!this.state.didSubscribe ? null : 'success'} 
+					<Input style={{zIndex: '1'}} ref="emailAddress" bsStyle={!this.state.didSubscribe ? null : 'success'} 
 						hasFeedback 
 						type="email" 
 						label={!this.state.didSubscribe ? labelText : "Thanks! You're now subscribed!"}

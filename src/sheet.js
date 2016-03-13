@@ -20,7 +20,7 @@ var SheetComponent = React.createClass({
 	render: function(){
 
 		return (
-			<Thumbnail src={"./muzic/"+this.props.fileName+".jpg"} alt="242x200">
+			<Thumbnail src={"./muzic/"+this.props.fileName+".jpg"} alt="">
 		        <h3>{this.props.header}</h3>
 		        <p>{this.props.description}</p>
 		        <h3>
