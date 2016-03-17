@@ -42,6 +42,10 @@ var ProjectsComponent = React.createClass({
 	            	self.setState({
 	                	content: text
 	            	});
+	            }else{
+	            	self.setState({
+	                	content: "<h1>Uhhh...404 Error(?)</h1><p>Yeah, I couldn't find the article you specified. Try checking the spelling :)</p>"
+	            	});
 	            }
 	        }
 	    }
@@ -55,7 +59,7 @@ var ProjectsComponent = React.createClass({
 		var article = this.props.location.query.article;
 		console.log(this.props.location);
 		console.log(article);
-		if(article) {self.readTextFile('./blogs/'+article+'.html');}
+		if(article) {this.readTextFile('./blogs/'+article+'.html');}
 	},
 
 	render: function(){
