@@ -25,10 +25,12 @@ var MusicComponent = React.createClass({
 		return (
 			<Grid>
 				<Row>
-					<Panel className='MusicPanel'>These are some of the completed compositions I have written. Take a look! 
+					
+					<Panel collapsible defaultExpanded className='MusicPanel'>These are some of the completed compositions I have written. Take a look! 
 					If you like what you hear or would like to use any of my music in a project, shoot me an email at <a href="mailto:contact@seanphillips.me">contact@seanphillips.me</a>. 
 					I would love to hear what you think. Please do not sell or use any of my compositions for profit without my knowedge. 
 					If you really, REALLY, like any of my work, you can donate [here] to support my musical endeavors!</Panel>
+					
 					
 					{
 			    		sheets.map(function(item, i){
@@ -42,7 +44,9 @@ var MusicComponent = React.createClass({
 					
 				</Row>
 				<Row>
-					<SubscribeForm/>
+					<Col xs={12}>
+						<SubscribeForm/>
+					</Col>
 				</Row>
 				<Row>
 					<Col style={{textAlign: 'center'}}>

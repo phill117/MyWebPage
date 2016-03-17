@@ -2,6 +2,11 @@
 //To center the three items in the navbar
 nav .container {
 	width: 600px;
+	@media (max-width: 991px){
+		width: 600px;
+		line-height: 100px;
+		height: 100px;
+	}
 }
 
 #myNavBar {
@@ -12,9 +17,11 @@ nav .container {
 	border-bottom-left-radius:  0px;
 	display: inline-block;
 	text-align: center;
-	font-size: 28px;
+	font-size: 38px;
 	width: 100%;
+	height: 100px;
 	@media (min-width: 992px){
+		height: 51px;
 		font-size: 20px;
 		width: 600px;
 		border-bottom-right-radius: 30px;

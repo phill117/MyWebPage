@@ -33,7 +33,7 @@ var ProjectsComponent = React.createClass({
 
 	readTextFile: function(file) {
 	    var rawFile = new XMLHttpRequest();
-	    rawFile.open("GET", file, false);
+	    rawFile.open("GET", file, true);
 	    var self = this;
 	    rawFile.onreadystatechange = function () {
 	        if(rawFile.readyState === 4) {
@@ -46,6 +46,16 @@ var ProjectsComponent = React.createClass({
 	        }
 	    }
 	    rawFile.send(null);
+	    self.setState({
+        	content: "<h1>Loading...</h1>"
+    	});
+	},
+
+	componentDidMount: function(){
+		var article = this.props.location.query.article;
+		console.log(this.props.location);
+		console.log(article);
+		if(article) {self.readTextFile('./blogs/'+article+'.html');}
 	},
 
 	render: function(){
@@ -82,7 +92,9 @@ var ProjectsComponent = React.createClass({
 				</Grid>
 				<Grid>
 					<Row>
-						<SubscribeForm/>
+						<Col xs={12}>
+							<SubscribeForm/>
+						</Col>
 					</Row>
 				</Grid>
 			</div>
@@ -113,7 +125,7 @@ var styles = {
     top: '36px'
   },
   bmBurgerBars: {
-    background: '#373a47'
+    background: '#000000'
   },
   bmCrossButton: {
   	marginTop: '-65px',

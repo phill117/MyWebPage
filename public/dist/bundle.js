@@ -52765,7 +52765,7 @@ var MusicComponent = React.createClass({
 				null,
 				React.createElement(
 					Panel,
-					{ className: 'MusicPanel' },
+					{ collapsible: true, defaultExpanded: true, className: 'MusicPanel' },
 					'These are some of the completed compositions I have written. Take a look! If you like what you hear or would like to use any of my music in a project, shoot me an email at ',
 					React.createElement(
 						'a',
@@ -52785,7 +52785,11 @@ var MusicComponent = React.createClass({
 			React.createElement(
 				Row,
 				null,
-				React.createElement(SubscribeForm, null)
+				React.createElement(
+					Col,
+					{ xs: 12 },
+					React.createElement(SubscribeForm, null)
+				)
 			),
 			React.createElement(
 				Row,
@@ -52903,23 +52907,26 @@ var ProfileComponent = React.createClass({
 					React.createElement(
 						Col,
 						{ md: 12 },
-						React.createElement(Image, { src: 'assets/profile_pic.jpg', circle: true, responsive: true }),
 						React.createElement(
-							'h2',
-							{ style: { textAlign: 'center' } },
-							'Sean Phillips'
-						),
-						React.createElement(
-							'p',
+							Row,
 							null,
-							'I\'m making this website right now thinking, "Man...what am I going to do with all of this screen space?" I suppose I could sell it. I hear seanphillips.me is a pretty in-demand URL these days, but then again, whoever buys it might not live up to the name. I could write a funny little anecdote.... ....naaaah those are overrated. Besides, I hate writing papers. Why do people think I became a programmer? Because it\'s a fun and rewarding career choice that is high in demand in this current technological era? OF COURSE NOT!!! I haven\'t written an essay in over three years! It\'s like a dream come true! Whelp. This little journal sesh was fun, but it\'s 12:55 AM, and I have class in about seven and half hours. I really need to stop procrastinating on sleep. I don\'t know what wrong it ever did me. '
+							React.createElement(
+								Col,
+								{ mdOffset: 0, md: 12, xsOffset: 3, xs: 6 },
+								React.createElement(Image, { src: 'assets/profile_pic.jpg', circle: true, responsive: true }),
+								React.createElement(
+									'h2',
+									{ style: { textAlign: 'center' } },
+									'Sean Phillips'
+								)
+							)
 						),
 						React.createElement(
 							Row,
 							null,
 							React.createElement(
 								Col,
-								{ style: { textAlign: 'center' }, sm: 4, xs: 2 },
+								{ style: { textAlign: 'center' }, xsOffset: 3, xs: 2, mdOffset: 0, md: 4 },
 								React.createElement(
 									'a',
 									{ href: 'https://github.com/phill117' },
@@ -52928,7 +52935,7 @@ var ProfileComponent = React.createClass({
 							),
 							React.createElement(
 								Col,
-								{ style: { textAlign: 'center' }, sm: 4, xs: 2 },
+								{ style: { textAlign: 'center' }, xs: 2, md: 4 },
 								React.createElement(
 									'a',
 									{ href: 'https://www.linkedin.com/in/sphillips117' },
@@ -52937,12 +52944,21 @@ var ProfileComponent = React.createClass({
 							),
 							React.createElement(
 								Col,
-								{ style: { textAlign: 'center' }, sm: 4, xs: 2 },
+								{ style: { textAlign: 'center' }, xs: 2, md: 4 },
 								React.createElement(
 									'a',
 									{ href: 'mailto:contact@seanphillips.me' },
 									React.createElement('i', { className: 'fa fa-envelope-square fa-4x profIcon' })
 								)
+							)
+						),
+						React.createElement(
+							Row,
+							null,
+							React.createElement(
+								'p',
+								{ style: { textAlign: 'justify' } },
+								'I\'m making this website right now thinking, "Man...what am I going to do with all of this screen space?" I suppose I could sell it. I hear seanphillips.me is a pretty in-demand URL these days, but then again, whoever buys it might not live up to the name. I could write a funny little anecdote.... ....naaaah those are overrated. Besides, I hate writing papers. Why do people think I became a programmer? Because it\'s a fun and rewarding career choice that is high in demand in this current technological era? OF COURSE NOT!!! I haven\'t written an essay in over three years! It\'s like a dream come true! Whelp. This little journal sesh was fun, but it\'s 12:55 AM, and I have class in about seven and half hours. I really need to stop procrastinating on sleep. I don\'t know what wrong it ever did me. '
 							)
 						)
 					)
@@ -52994,7 +53010,7 @@ var ProjectsComponent = React.createClass({
 
 	readTextFile: function readTextFile(file) {
 		var rawFile = new XMLHttpRequest();
-		rawFile.open("GET", file, false);
+		rawFile.open("GET", file, true);
 		var self = this;
 		rawFile.onreadystatechange = function () {
 			if (rawFile.readyState === 4) {
@@ -53007,6 +53023,18 @@ var ProjectsComponent = React.createClass({
 			}
 		};
 		rawFile.send(null);
+		self.setState({
+			content: "<h1>Loading...</h1>"
+		});
+	},
+
+	componentDidMount: function componentDidMount() {
+		var article = this.props.location.query.article;
+		console.log(this.props.location);
+		console.log(article);
+		if (article) {
+			self.readTextFile('./blogs/' + article + '.html');
+		}
 	},
 
 	render: function render() {
@@ -53058,7 +53086,11 @@ var ProjectsComponent = React.createClass({
 				React.createElement(
 					Row,
 					null,
-					React.createElement(SubscribeForm, null)
+					React.createElement(
+						Col,
+						{ xs: 12 },
+						React.createElement(SubscribeForm, null)
+					)
 				)
 			)
 		);
@@ -53083,7 +53115,7 @@ var styles = {
 		top: '36px'
 	},
 	bmBurgerBars: {
-		background: '#373a47'
+		background: '#000000'
 	},
 	bmCrossButton: {
 		marginTop: '-65px',
