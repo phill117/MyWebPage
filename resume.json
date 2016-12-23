@@ -1,0 +1,49 @@
+{
+	"experience": [
+		{
+			"company": "Angie's List",
+			"position": "Software Engineering Intern",
+			"duration": "June - August 2015",
+			"location": "Indianapolis, IN",
+			"duties": 
+					["Integrated third-party analytics software Optimizely and Segment into SnapFix web application pipeline",
+					"Collaborated with the Product team to produce a responsive and appealing frontend component in React.js for the SnapFix Web application.",
+					"Restructured the backend advertising bounded context for use as a distributable Scala-Play micro-service."]
+		},
+		{
+			"company": "3iD / IN3",
+			"position": "Student Developer",
+			"duration": "May 2014 - Present",
+			"location": "Purdue Research Park, West Lafayette, IN",
+			"duties": 
+					["Developed Android & iOS applications such as a seed inventory app with built in diagnostic tools, a company directory app, and a class registration and attendance app.",
+					"Utilized SQLite Databases to Dynamically Render Data across all applications"]
+		},
+		{
+			"company": "Professional Meters, Inc.",
+			"position": "IT Intern",
+			"duration": "June - August 2013",
+			"location": "Morris, IL",
+			"duties": 
+					["Edited Company Databases Using SQL, MS Access, and MS SQL Server",
+					"Created Company Home Page with CSS, HTML, and ASP.NET",
+					"Redesigned the Company Web Portal with SQL and ASP.NET"]
+		}
+	],
+
+	"skills": ["Java", "Scala", "C", "Android", "iOS", "Objective-C", "Swift", "HTML/CSS", "Node.js", "React.js", "SQL", "Git", "Scrum"],
+
+	"education": [
+		{
+			"school": "Purdue University",
+			"time": "2013 - Present",
+			"caption": "BS in Computer Science with a concentration in Machine Learning"
+		},
+		{
+			"school": "University of New South Wales",
+			"time": "Spring 2016",
+			"caption": "Study Abroad / Exchange"
+		}
+	]
+
+}

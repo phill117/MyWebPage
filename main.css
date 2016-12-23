@@ -1,0 +1,82 @@
+/*
+	green : #1B6F1B
+*/
+
+@import "./custom_navbar.css";
+
+body {
+	font-family: 'Lato', sans-serif;
+	margin-bottom: 40px;
+}
+
+.rightcol {
+	text-align: right;
+}
+
+@media (max-width: 767px) {
+	.opt {
+		display: none !important;
+	}
+	.rightcol {
+		text-align: left;
+	}
+}
+
+.glyphicon-music {
+	font-size: 18px;
+}
+
+.btn-group .btn {
+	height: 36px;
+}
+
+.license {
+	margin: 20px 0 20px;
+	text-align: center;
+}
+
+.mus_item {
+	margin-bottom: 40px;
+	margin-left: 40px;
+}
+.mus_item p, .intro, .job_item, .caption p{
+	font-family: 'Roboto', sans-serif;
+}
+
+.center {
+	text-align: center;
+}
+
+.lower{
+	margin-top: 10px;
+}
+
+.fa {
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+
+.profile {
+	margin: auto;
+	width: 60%;
+	display: block;
+}
+
+a {
+	color: #15790c;
+}
+
+a:hover {
+	color: #315d2b;
+}
+
+.caption p {
+	margin-top: 15px;
+}
+
+#Sketches, #Original, #Arrangements{
+	margin-bottom: 20px;
+}
+
+
+
